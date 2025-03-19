@@ -1,11 +1,8 @@
 A specialized AI chatbot interface focused on esports knowledge, built with Node.js and vanilla JavaScript.
 
 ## Features
-
-- 🎮 Esports-specific responses (tournaments, teams, strategies)
 - 💬 Real-time chat interface with markdown support
 - 🖼️ Image upload capability
-- 🛡️ Content filtering for non-esports topics
 - 📱 Responsive design
 
 ## Technologies
