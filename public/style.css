@@ -1,0 +1,209 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background: #1a1a1a;
+}
+
+header {
+    background-color: #0f0f0f;
+    border-bottom: 1px solid #2d2d2d;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: 62px;
+}
+
+header h1 {
+    color: #2b5278;
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    margin: 0;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    height: 62px;
+}
+
+header h1::before {
+    content: "";
+    display: block;
+    width: 8px;
+    height: 32px;
+    background-color: #2b5278;
+    border-radius: 4px;
+}
+
+.main-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    height: calc(100vh - 62px);
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.chat-container {
+    flex: 1;
+    height: calc(100vh-150px);
+    padding: 20px 20px 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    position: relative;
+}
+
+.user-chat-box, .ai-chat-box {
+    display: flex;
+    gap: 15px;
+    max-width: 80%;
+    width: fit-content;
+}
+
+.user-chat-box {
+    margin-left: auto;
+    flex-direction: row-reverse;
+}
+
+.ai-chat-box {
+    margin-right: auto;
+}
+
+.user-chat-area, .ai-chat-area {
+    padding: 15px 20px;
+    line-height: 1.4;
+    font-size: 16px;
+    border-radius: 20px;
+    max-width: 100%;
+    word-break: break-word;
+}
+
+.user-chat-area {
+    background: #2b5278;
+    color: #ffffff;
+    border-radius: 20px 4px 20px 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.ai-chat-area {
+    background: #2d2d2d;
+    color: #e0e0e0;
+    border-radius: 4px 20px 20px 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    flex-shrink: 0;
+}
+
+.prompt-area {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 1200px;
+    background: #0f0f0f;
+    padding: 15px 20px;
+    border-top: 1px solid #2d2d2d;
+    z-index: 1000;
+    display: flex;
+    gap: 15px;
+    padding: 15px 20px;
+    align-items: center;
+}
+
+.prompt-area input {
+    flex: 1;
+    min-width: 120px; /* Prevent from becoming too small */
+    height: 50px;
+    background: #2d2d2d;
+    border: 1px solid #3d3d3d;
+    border-radius: 25px;
+    padding: 0 20px;
+    color: white;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    margin-right: 8px; /* Add spacing between input and buttons */
+}
+
+.prompt-area button {
+    width: 50px;
+    height: 50px;
+    min-width: 50px; /* Prevent button shrinking */
+    border-radius: 50%;
+    background: #2b5278;
+    border: none;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0; /* Prevent button from shrinking */
+    transition: all 0.3s ease;
+}
+.prompt-area button:hover {
+    background: #366699;
+    transform: scale(1.05);
+}
+
+.prompt-area button img {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0) invert(1);
+}
+
+.esports-warning {
+    background: #4a2f2f !important;
+    border: 2px solid #ff4444;
+    animation: shake 0.5s;
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(5px); }
+    50% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+    100% { transform: translateX(0); }
+}
+
+.ai-chat-area.esports-warning::before {
+    content: "⚠️ Esports Alert: ";
+    color: #ff4444;
+    font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .chat-container {
+        padding: 15px 15px 80px;
+    }
+    
+    .user-chat-box, .ai-chat-box {
+        max-width: 90%;
+    }
+    
+    .prompt-area {
+        padding: 10px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.4rem;
+    }
+    
+    .prompt-area input {
+        padding: 0 15px;
+    }
+}

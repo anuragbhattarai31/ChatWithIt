@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatWithIt</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="main-wrapper">
+            <h1>Chatwithit</h1>
+        </div>
+    </header>
+    <div class="main-wrapper">
+        <div class="chat-container">
+            <div class="ai-chat-box">
+                <img src="/assets/AI.png" class="avatar" alt="AI">
+                <div class="ai-chat-area">
+                    Hello welcome to ChatWithIt! How Can I Help you Today?
+                </div>
+            </div>
+        </div>
+        <div class="prompt-area">
+            <input type="text" id="prompt" placeholder="Message...">
+            <button id="image">
+                <img src="/assets/img.svg" alt="Attach">
+                <input type="file" accept="image/*" hidden>
+            </button>
+            <button id="submit">
+                <img src="/assets/submit.svg" alt="Send">
+            </button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
